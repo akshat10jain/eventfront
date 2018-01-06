@@ -1,0 +1,229 @@
+
+/** ====== Information Bar styles ====== **/
+#information-bar {
+    background: #F6F9F9;
+  }
+  #information-bar .container {
+    padding: 45px 0;
+    background: #fff;
+    margin-top: -80px;
+    position: relative;
+    z-index: 999;
+  }
+  #information-bar .col-lg-3 {
+    border-right: 2px solid #F2F2F2;
+  }
+  #information-bar .col-lg-3:last-child {
+    border: none;
+  }
+  #information-bar .col-lg-3 ul {
+    text-align: center;
+  }
+  #information-bar .col-lg-3 ul li {
+    display: inline;
+  }
+  #information-bar .col-lg-3 ul li span {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  #information-bar .col-lg-3 ul li span b {
+    font-size: 20px;
+    color: #374045;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  #information-bar .col-lg-3 ul li span.img-holder {
+    text-align: center;
+    padding: 0 12px;
+  }
+  #information-bar .col-lg-3 ul li span.img-holder img {
+    display: block;
+  
+  }
+  
+  /** ====== Upcoming Event styles ====== **/
+
+
+
+
+
+
+
+#upcoming-event {
+    background: #F6F9F9;
+    padding: 80px 0;
+  }
+  #upcoming-event form {
+    background: none;
+    border: 1px solid #E1E1E1;
+    height: 45px;
+    padding-right: 20px;
+    margin-top: 70px;
+    transition: all .3s ease;
+  }
+  #upcoming-event form input {
+    border: none;
+    background: none;
+    outline: none;
+    color: #929FA8;
+    height: 45px;
+    line-height: 40px;
+    padding-left: 20px;
+  }
+  #upcoming-event form input:focus + button {
+    color: #FF8625;
+  }
+  #upcoming-event form:hover {
+    border-color: #00D8B7;
+  }
+  #upcoming-event form:hover button {
+    color: #FF8625;
+  }
+  #upcoming-event form button {
+    background: none;
+    border: none;
+    outline: none;
+    color: #CDCDCD;
+    transition: all .3s ease;
+  }
+   /* #upcoming-event .mix {
+    display: none;
+  } */
+  #upcoming-event .tab-title-wrap {
+    margin: 30px 0;
+  } 
+  #upcoming-event .tab-title-wrap ul li {
+    float: left;
+  }
+  #upcoming-event .tab-title-wrap ul li.active span {
+    background: #00D8B7;
+    color: #fff;
+  }
+  #upcoming-event .tab-title-wrap ul li span {
+    display: inline-block;
+    color: #374045;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px 34.9px;
+    text-transform: uppercase;
+    border-left: 1px solid #E6EDEE;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  #upcoming-event .tab-title-wrap ul li span:hover {
+    background: #00D8B7;
+    color: #fff;
+  }
+  #upcoming-event .tab-content-wrap {
+    margin: 0px -10px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 {
+    padding: 0 10px;
+    margin-bottom: 25px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3:hover .img-holder img {
+    transform: scale(1.2);
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3:hover .img-holder:before {
+    bottom: 0;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3:hover .img-holder:after {
+    bottom: 0;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3:hover .content-wrap {
+    box-shadow: 0 0 0 1px #00D8B7;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .img-holder {
+    overflow: hidden;
+    position: relative;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .img-holder img {
+    transition: all .3s ease;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .img-holder:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    opacity: .85;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all .3s ease;
+    background: #1eb089;
+    background: -moz-linear-gradient(left, #1eb089 0%, #7c49ab 100%, #7db9e8 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1eb089), color-stop(100%, #7c49ab), color-stop(100%, #7db9e8));
+    background: -webkit-linear-gradient(left, #1eb089 0%, #7c49ab 100%, #7db9e8 100%);
+    background: -o-linear-gradient(left, #1eb089 0%, #7c49ab 100%, #7db9e8 100%);
+    background: -ms-linear-gradient(left, #1eb089 0%, #7c49ab 100%, #7db9e8 100%);
+    background: linear-gradient(to right, #1eb089 0%, #7c49ab 100%, #7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1eb089', endColorstr='#7db9e8', GradientType=1);
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .img-holder:after {
+    content: ' ';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* background: transparent url(../img/gallery/overlay-bg.png) center center no-repeat; */
+    transition: all .3s ease .1s;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap {
+    background: #fff;
+    padding: 0 30px 30px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .author-img {
+    margin-top: -20px;
+    position: relative;
+    z-index: 99999;
+    border-radius: 50%;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .meta {
+    margin-bottom: 25px;
+    margin-top: 15px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .meta ul {
+    text-align: left;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .meta ul li {
+    display: inline;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .meta ul li span {
+    display: inline-block;
+    color: #929FA8;
+    margin-right: 10px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap .meta ul li span .fa {
+    color: #00D8B7;
+    margin-right: 5px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap h3 {
+    font-size: 18px;
+    color: #374045;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap p {
+    color: #929fa8;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap a.read-more {
+    font-size: 12px;
+    color: #00D8B7;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap a.read-more .fa {
+    margin-left: 5px;
+  }
+  #upcoming-event .tab-content-wrap .col-lg-3 .content-wrap a.read-more:hover {
+    color: #FF8625;
+  
+  }

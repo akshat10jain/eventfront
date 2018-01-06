@@ -1,0 +1,130 @@
+<h2 class="heading">Add Event</h2>
+<hr>
+<br>
+<form #form="ngForm">
+  <div class="form-group" [class.has-error]="eventName.invalid && eventName.touched">
+    <label class="control-label">
+      <h3>Title</h3>
+    </label>
+    <input type="text" name="eventName" required class="form-control" ngModel #eventName="ngModel">
+  </div>
+  <div class="form-group" [class.has-error]="location.invalid && location.touched">
+    <label class="control-label">
+      <h3>Address</h3>
+    </label>
+    <input type="text" name="location" required class="form-control" ngModel #location="ngModel">
+  </div>
+  <div class="form-group" [class.has-error]="time.invalid && time.touched">
+    <label class="control-label">
+      <h3>Time</h3>
+    </label>
+    <input type="time" name="time" required class="form-control" ngModel #time="ngModel">
+  </div>
+  <div class="form-group" [class.has-error]="date.invalid && date.touched">
+    <label class="control-label">
+      <h3>Date</h3>
+    </label>
+    <input type="date" name="date" required class="form-control" ngModel #date="ngModel">
+  </div>
+  <div class="form-group" [class.has-error]="contact.invalid && contact.touched">
+    <label class="control-label">
+      <h3>Contact</h3>
+    </label>
+    <input type="text" name="contact" required class="form-control" ngModel #contact="ngModel">
+  </div>
+  <div class="form-group">
+    <label class="control-label">
+      <h3>Event Image</h3>
+    </label>
+    <small>Enter image size upto 5MB</small>
+    <input type="file" required ng2FileSelect [uploader]="uploader" />
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="50%">Name</th>
+          <th>Size</th>
+          <th>Progress</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of uploader.queue">
+          <td>
+            <strong>{{ item?.file?.name }}</strong>
+          </td>
+          <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+          <td *ngIf="uploader.isHTML5">
+            <div class="progress" style="margin-bottom: 0;">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+            </div>
+          </td>
+          <td class="text-center">
+            <span *ngIf="item.isSuccess">
+              <i class="glyphicon glyphicon-ok"></i>
+            </span>
+            <span *ngIf="item.isCancel">
+              <i class="glyphicon glyphicon-ban-circle"></i>
+            </span>
+            <span *ngIf="item.isError">
+              <i class="glyphicon glyphicon-remove"></i>
+            </span>
+          </td>
+          <td nowrap>
+            <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()" [disabled]="!item.isUploading">
+              <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+            </button>
+            <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+              <span class="glyphicon glyphicon-trash"></span> Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="form-group" [class.has-error]="tags.invalid && tags.touched">
+    <label class="control-label">
+      <h3>Tags</h3>
+    </label>
+    <select class="form-control" name="tags" ngModel #tags="ngModel">
+      <option>Healthcare</option>
+      <option>Technology</option>
+      <option>Internet of things</option>
+      <option>Hashion</option>
+      <option>Science</option>
+    </select>
+  </div>
+  <div class="form-group" [class.has-error]="publishedBy.invalid && publishedBy.touched">
+    <label class="control-label">
+      <h3>Organizer</h3>
+    </label>
+    <input type="text" name="publishedBy" required class="form-control" ngModel #publishedBy="ngModel">
+  </div>
+  <div class="form-group" [class.has-error]="description.invalid && description.touched">
+    <label>
+      <h3>Description</h3>
+    </label>
+    <small>Description should atleast 150 characters long</small>
+    <textarea type="text" name="description" required minlength=150 class="form-control" ngModel #description="ngModel"></textarea>
+  </div>
+  <button type="button" mat-raised-button color="accent" (click)="createEvent(form)" [disabled]="!(uploader.getNotUploadedItems().length&&uploader.queue.length<=1 && form.valid)">Submit
+    <span class="glyphicon glyphicon-upload"></span>
+  </button>
+</form>
+<div>
+  Queue progress:
+  <div class="progress" style="">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+  </div>
+</div>
+<div>
+  Progress:
+  <div class="progress" style="">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+  </div>
+  <div>{{uploader.progress}} %</div>
+</div>
+<br>
+<br>
+{{form.value|json}}
