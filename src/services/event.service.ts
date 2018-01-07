@@ -13,4 +13,7 @@ export class eventService {
     getEvents(){
         return this.http.get(this.link+'event/get/list')
     }
+    getEvent(id){
+        return this.http.get(this.link+`event/getevent/${id}`)
+    }
 }
