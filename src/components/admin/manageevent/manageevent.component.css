@@ -1,0 +1,12 @@
+.panel-heading{
+    background-color: tomato;
+    height: 70px;
+
+}
+.panel-title{
+    padding-top: 15px;
+}
+.panel{
+    border-radius: 0
+    
+}

@@ -5,13 +5,16 @@ import { UserComponent } from '../components/admin/users/user.component'
 import { EventsComponent } from '../components/guest/events/events.component';
 import { GuestComponent } from '../components/guest/guest.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
+import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
 const routes: Routes = [
+    { path: 'admin', redirectTo: '/admin/manageevent', pathMatch: 'full' },
     {
         path: 'admin', component: AdminComponent,
         children: [
             { path: 'users', component: UserComponent },
             { path: 'addevent', component: AddeventComponent },
-            { path: 'editevent/:id', component: AddeventComponent }
+            { path: 'editevent/:id', component: AddeventComponent },
+            { path: 'manageevent', component: ManageeventComponent }
         ]
     },
     {

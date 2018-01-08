@@ -28,6 +28,7 @@ import { EventsComponent } from '../components/guest/events/events.component';
 import { GuestComponent } from '../components/guest/guest.component';
 import { HeaderComponent } from '../components/guest/header/header.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
+import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { GeteventComponent } from '../components/guest/getevent/getevent.compone
     EventsComponent,
     GuestComponent,
     HeaderComponent,
-    GeteventComponent
+    GeteventComponent,
+    ManageeventComponent
   ],
   imports: [
     appRouterModule,
