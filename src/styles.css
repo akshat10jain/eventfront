@@ -1,5 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+@font-face {
+  font-family: GraublauWeb;
+  src: url("./assets/xyz.otf") format("opentype");
+}
+.custom-font{
+  font-family: GraublauWeb
+}
 body{
   width:100%;
   padding: 0px;

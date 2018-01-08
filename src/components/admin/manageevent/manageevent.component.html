@@ -1,14 +1,46 @@
-<div class="panel-group">
+<div class="panel panel-default">
+  <div class="panel-body">&nbsp;Total no of events &nbsp;
+    <strong>{{events?.length}}</strong>
+    <br>
+  </div>
+</div>
+<div class="panel-group" *ngFor="let event of events;let i = index">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1"><i class="fa fa-plus" aria-hidden="true"></i>
-          Collapsible panel</a>
+      <h4 class="panel-title pull-left">
+        <a data-toggle="collapse" href="#{{i}}">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          {{event.eventName}}</a>
       </h4>
+      <h5 class="panel-title pull-right">
+        <i>on</i> {{event.date|date}}
+      </h5>
+
     </div>
-    <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+    <div [attr.id]="i" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p class="pull-right"><button mat-raised-button color="accent">Edit</button></p>
+        <p>
+          <strong>Time: </strong>{{event.time}}</p>
+        <p>
+          <strong>Location: </strong>{{event.location}}</p>
+        <p>
+          <strong>Image: </strong>
+          <a href="http://localhost:3000{{event.eventImage}}" target="blank">Click here</a>
+        </p>
+        <p>
+          <strong>Published: </strong>{{event.publishedOn|date}}</p>
+        <p class="description">
+          <strong>Description: </strong>
+          <br>
+          <br>{{event.description}}</p>
+      </div>
+      <div class="panel-footer">
+        <p class="pull-left custom-font">
+          <strong>organizer: {{event.publishedBy}}</strong>
+        </p>
+        <p class="text-right custom-font">contact: {{event.contact}}</p>
+      </div>
     </div>
   </div>
 </div>
