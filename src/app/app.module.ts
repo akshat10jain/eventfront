@@ -29,7 +29,9 @@ import { GuestComponent } from '../components/guest/guest.component';
 import { HeaderComponent } from '../components/guest/header/header.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
 import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
-
+import { MailboxComponent } from '../components/admin/mailbox/mailbox.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
 @NgModule({
   declarations: [
     MainComponent,
@@ -42,11 +44,13 @@ import { ManageeventComponent } from '../components/admin/manageevent/manageeven
     GuestComponent,
     HeaderComponent,
     GeteventComponent,
-    ManageeventComponent
+    ManageeventComponent,
+    MailboxComponent
   ],
   imports: [
     appRouterModule,
     FileUploadModule,
+    CKEditorModule ,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

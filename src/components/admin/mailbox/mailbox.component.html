@@ -1,0 +1,21 @@
+<form #form="ngForm">
+    <div class="form-group" [class.has-error]="reciever.invalid && reciever.touched">
+        <label class="control-label">
+            <h3>To</h3>
+        </label>
+        <input type="text" name="reciever" required class="form-control" ngModel #reciever="ngModel">
+    </div>
+    <div class="form-group" [class.has-error]="subject.invalid && subject.touched">
+        <label class="control-label">
+            <h3>Subject</h3>
+        </label>
+        <input type="text" name="subject" required class="form-control" ngModel #subject="ngModel">
+    </div>
+    <div class="form-group" [class.has-error]="body.invalid && body.touched">
+        <label class="control-label">
+            <h3>Content</h3>
+        </label>
+        <ckeditor name="description" debounce="500" name="body" ngModel #body="ngModel"></ckeditor>
+    </div>
+    <button md-raise-button  class="btn btn-primary">Send</button>
+    </form>

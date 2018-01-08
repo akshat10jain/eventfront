@@ -27,10 +27,12 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "ng2-ckeditor": "^1.1.13",
     "ng2-file-upload": "^1.3.0",
     "ng2-pagination": "^2.0.2",
     "primeng": "^5.0.2",
     "rxjs": "^5.5.2",
+    "summernote": "^0.8.9",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
