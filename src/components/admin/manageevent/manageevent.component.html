@@ -19,9 +19,13 @@
     </div>
     <div [attr.id]="i" class="panel-collapse collapse">
       <div class="panel-body">
-        <p class="pull-right"><button mat-raised-button color="accent">Edit</button></p>
+        <p class="pull-right" [routerLink]="['/admin/editevent',event._id]">
+          <button mat-raised-button color="accent">Edit</button>
+        </p>
         <p>
           <strong>Time: </strong>{{event.time}}</p>
+        <p>
+          <strong>Category: </strong>{{event.tags[0]}}</p>
         <p>
           <strong>Location: </strong>{{event.location}}</p>
         <p>

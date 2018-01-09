@@ -2,15 +2,32 @@ import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core'
 import { userService } from '../../../services/user.service';
 import { FileUploader } from 'ng2-file-upload'
 declare var bootbox: any
+import { ActivatedRoute, Params } from '@angular/router';
+import { eventService } from '../../../services/event.service'
 @Component({
   templateUrl: './addevent.component.html',
   styleUrls: ['./addevent.component.css']
 })
 export class AddeventComponent implements OnInit {
+  public eventId = null;
+  public eventData={};
   public formData: FormData;
   public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3000/api/event/add/event', itemAlias: 'eventImage' });
+  constructor(private _routeParams: ActivatedRoute, private eventService: eventService) {
+    var queryParam = this._routeParams.params.subscribe((params: Params) => {
+       this.eventId = params['eventId'];
+       console.log(this.eventId)
+    });
+  }
   ngOnInit() {
-
+    if(this.eventId != null){
+      this.eventService.getEvent(this.eventId).subscribe((resp) => {
+        if(!resp['error']){
+           this.eventData = resp['data']
+           console.log(this.eventData)
+        }  
+      })
+    }
   }
   createEvent(data) {
     bootbox.confirm("Are you sure you want to save!", (resp) => {
@@ -40,5 +57,8 @@ export class AddeventComponent implements OnInit {
   onSuccessItem(item, response: string, status: number, headers): any {
     console.log("iam here")
     //this gets triggered only once when first file is uploaded
+  }
+  editEvent(){
+
   }
 }

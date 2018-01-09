@@ -7,16 +7,18 @@ import { GuestComponent } from '../components/guest/guest.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
 import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
 import { MailboxComponent } from '../components/admin/mailbox/mailbox.component';
+import { DashboardComponent } from '../components/admin/dashboard/dashboard.component';
 const routes: Routes = [
-    { path: 'admin', redirectTo: '/admin/manageevent', pathMatch: 'full' },
+    { path: 'admin', redirectTo: '/admin/dashboard', pathMatch: 'full' },
     {
         path: 'admin', component: AdminComponent,
         children: [
             { path: 'users', component: UserComponent },
             { path: 'addevent', component: AddeventComponent },
-            { path: 'editevent/:id', component: AddeventComponent },
+            { path: 'editevent/:eventId', component: AddeventComponent },
             { path: 'manageevent', component: ManageeventComponent },
-            { path: 'mail', component: MailboxComponent }
+            { path: 'mail', component: MailboxComponent },
+            { path: 'dashboard', component: DashboardComponent }
         ]
     },
     {

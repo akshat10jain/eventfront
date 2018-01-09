@@ -15,6 +15,7 @@ import { userService } from '../services/user.service';
 import { eventService } from '../services/event.service'
 import { HttpClientModule } from "@angular/common/http";
 import { Ng2PaginationModule } from 'ng2-pagination';
+import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ButtonModule } from 'primeng/primeng';
 import { AdminComponent } from '../components/admin/admin.component'
@@ -32,6 +33,7 @@ import { ManageeventComponent } from '../components/admin/manageevent/manageeven
 import { MailboxComponent } from '../components/admin/mailbox/mailbox.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
+import { DashboardComponent } from '../components/admin/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     MainComponent,
@@ -45,12 +47,13 @@ import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
     HeaderComponent,
     GeteventComponent,
     ManageeventComponent,
-    MailboxComponent
+    MailboxComponent,
+    DashboardComponent
   ],
   imports: [
     appRouterModule,
     FileUploadModule,
-    CKEditorModule ,
+    CKEditorModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
@@ -58,6 +61,7 @@ import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
     DataTableModule,
     SharedModule,
     SidebarModule,
+    MatListModule,
     HttpClientModule,
     Ng2PaginationModule,
     ButtonModule,

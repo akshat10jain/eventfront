@@ -6,31 +6,31 @@
     <label class="control-label">
       <h3>Title</h3>
     </label>
-    <input type="text" name="eventName" required class="form-control" ngModel #eventName="ngModel">
+    <input type="text" name="eventName" required class="form-control" [(ngModel)]="eventData.eventName" #eventName="ngModel">
   </div>
   <div class="form-group" [class.has-error]="location.invalid && location.touched">
     <label class="control-label">
       <h3>Address</h3>
     </label>
-    <input type="text" name="location" required class="form-control" ngModel #location="ngModel">
+    <input type="text" name="location" required class="form-control" [(ngModel)]="eventData.location" #location="ngModel">
   </div>
   <div class="form-group" [class.has-error]="time.invalid && time.touched">
     <label class="control-label">
       <h3>Time</h3>
     </label>
-    <input type="time" name="time" required class="form-control" ngModel #time="ngModel">
+    <input type="time" name="time" required class="form-control" [(ngModel)]="eventData.time" #time="ngModel">
   </div>
   <div class="form-group" [class.has-error]="date.invalid && date.touched">
     <label class="control-label">
       <h3>Date</h3>
     </label>
-    <input type="date" name="date" required class="form-control" ngModel #date="ngModel">
+    <input type="date" name="date" required class="form-control" [(ngModel)]="eventData.date" #date="ngModel">
   </div>
   <div class="form-group" [class.has-error]="contact.invalid && contact.touched">
     <label class="control-label">
       <h3>Contact</h3>
     </label>
-    <input type="text" name="contact" required class="form-control" ngModel #contact="ngModel">
+    <input type="text" name="contact" required class="form-control" [(ngModel)]="eventData.contact" #contact="ngModel">
   </div>
   <div class="form-group">
     <label class="control-label">
@@ -87,7 +87,7 @@
     <label class="control-label">
       <h3>Tags</h3>
     </label>
-    <select class="form-control" name="tags" ngModel #tags="ngModel">
+    <select class="form-control" name="tags" [(ngModel)]="eventData.tags" #tags="ngModel">
       <option>Healthcare</option>
       <option>Technology</option>
       <option>Internet of things</option>
@@ -99,25 +99,20 @@
     <label class="control-label">
       <h3>Organizer</h3>
     </label>
-    <input type="text" name="publishedBy" required class="form-control" ngModel #publishedBy="ngModel">
+    <input type="text" name="publishedBy" required class="form-control" [(ngModel)]="eventData.publishedBy" #publishedBy="ngModel">
   </div>
   <div class="form-group" [class.has-error]="description.invalid && description.touched">
     <label>
       <h3>Description</h3>
     </label>
     <small>Description should atleast 150 characters long</small>
-    <textarea type="text" name="description" required minlength=150 class="form-control" ngModel #description="ngModel"></textarea>
+    <textarea type="text" name="description" required minlength=150 class="form-control" [(ngModel)]="eventData.description"
+      #description="ngModel"></textarea>
   </div>
   <button type="button" mat-raised-button color="accent" (click)="createEvent(form)" [disabled]="!(uploader.getNotUploadedItems().length&&uploader.queue.length<=1 && form.valid)">Submit
     <span class="glyphicon glyphicon-upload"></span>
   </button>
 </form>
-<div>
-  Queue progress:
-  <div class="progress" style="">
-    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-  </div>
-</div>
 <div>
   Progress:
   <div class="progress" style="">
@@ -126,5 +121,4 @@
   <div>{{uploader.progress}} %</div>
 </div>
 <br>
-<br>
-{{form.value|json}}
+<br> {{form.value|json}}
