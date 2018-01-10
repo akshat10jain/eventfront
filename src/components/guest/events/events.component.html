@@ -1,3 +1,15 @@
+<div id="video-container">
+  <video preload="auto" autoplay="autoplay" type="video/mp4" src="./assets/video/back.mp4 " loop="loop" muted="muted"></video>
+  <div class="content">
+    <h1>See the upcoming event</h1>
+    <p>this is the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+  </div>
+
+</div>
+
+
+
+
 <!-- #upcoming-event -->
 <section id="upcoming-event">
   <div class="container">
@@ -11,7 +23,7 @@
       </div>
       <div class="col-lg-5 col-md-5 col-sm-5">
         <form action="index.html#" class="pull-right">
-          <input type="text" placeholder="Search Event">
+          <input type="text" placeholder="Search Event" name= "search" [(ngModel)]="_searchquery">
           <button type="submit">
             <i class="fa fa-search"></i>
           </button>
@@ -49,13 +61,13 @@
 
           </ul>
         </div>
-        <div class="tab-content-wrap row" *ngFor="let event of events">
-          <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow ">
+        <div class="tab-content-wrap row">
+          <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (events|SearchEvents:_searchquery)">
             <div class="img-holder">
-              <img src="./assets/img/upcoming-event/1.jpg" alt="">
+              <img src="http://localhost:3000{{event.eventImage}} " alt="">
             </div>
             <div class="content-wrap">
-              <img src="http://localhost:3000{{event.eventImage}}" alt="" class="author-img">
+              <!-- <img src=" ./assets/img/upcoming-event/1.jpg" alt="" class="author-img"> -->
               <div class="meta">
                 <ul>
                   <li>
@@ -64,15 +76,16 @@
                   </li>
                   <li>
                     <span>
-                      <i class="fa fa-map-marker"></i>California</span>
+                      <i class="fa fa-map-marker"></i>{{event.location}}</span>
                   </li>
                 </ul>
               </div>
-              <h3>{{event.name}}</h3>
-              <p>{{event.description}}</p>
+              <h3>{{event.eventName }}</h3>
+              <p>{{(event.description|slice:0:90)+'...' }}</p>
               <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
                 <i class="fa fa-angle-right"></i>
               </a>
+              <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
             </div>
           </div>
         </div>
@@ -80,4 +93,3 @@
     </div>
   </div>
 </section>
-<!-- /#upcoming-event -->

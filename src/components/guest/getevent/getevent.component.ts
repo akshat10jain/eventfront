@@ -8,6 +8,7 @@ import { eventService } from '../../../services/event.service'
 })
 export class GeteventComponent implements OnInit {
   public eventId
+  public events
   constructor(private _routeParams: ActivatedRoute, private eventService: eventService) {
     var queryParam = this._routeParams.params.subscribe((params: Params) => {
       this.eventId = params['eventId'];
@@ -15,7 +16,7 @@ export class GeteventComponent implements OnInit {
   }
   ngOnInit() {
     this.eventService.getEvent(this.eventId).subscribe((resp) => {
-      console.log(resp)
+      this.events = resp['data']
     })
   }
 

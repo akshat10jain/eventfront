@@ -1,3 +1,57 @@
-<p>
-  getevent works!
-</p>
+<section class="case_study_area">
+  <div class="container">
+    <div class="case_study_inner">
+      <div class="case_study_details">
+        <div class="case_study_img our_about_image">
+          <img src="http://localhost:3000{{events.eventImage}}" alt="">
+          <div class="customer_status">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Organizer: </td>
+                    <td> {{events.publishedBy}}</td>
+                  </tr>
+                  <tr>
+                    <td>Contact: </td>
+                    <td>{{events.contact}}</td>
+                  </tr>
+                  <tr>
+                    <td>Date :</td>
+                    <td>{{events.date | date}}</td>
+                  </tr>
+                  <tr>
+                    <td>Place : </td>
+                    <td>{{events.location}}</td>
+                  </tr>
+                  <tr>
+                    <td>Tags :</td>
+                    <td>{{events.tags}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="our_about_left_content">
+          <div class="section_title">
+            <h2>Description of project</h2>
+          </div>
+          <h3>{{events.eventName}} </h3>
+          <p>{{events.description }}</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<article class="comment">
+  <div class="comment-body">
+    <div class="text">
+      <p>Hello, this is an example comment</p>
+    </div>
+    <!-- <p class="attribution">by <a href="#non">anvvsjj</a> at 10:23pm, 4th jan 2018</p> -->
+  </div>
+</article>

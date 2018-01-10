@@ -26,16 +26,19 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-import { EventsComponent } from '../components/guest/events/events.component';
 import { GuestComponent } from '../components/guest/guest.component';
 import { HeaderComponent } from '../components/guest/header/header.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
+import { EventsComponent,searchEventsPipe } from '../components/guest/events/events.component';
 import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
 import { MailboxComponent } from '../components/admin/mailbox/mailbox.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
 import { DashboardComponent } from '../components/admin/dashboard/dashboard.component';
 import { Format } from '../components/admin/dashboard/dashboard.component';
+import { FooterComponent } from '../components/guest/footer/footer.component';
+
+
 @NgModule({
   declarations: [
     MainComponent,
@@ -51,7 +54,9 @@ import { Format } from '../components/admin/dashboard/dashboard.component';
     ManageeventComponent,
     MailboxComponent,
     DashboardComponent,
-    Format
+    Format,
+    searchEventsPipe,
+    FooterComponent
   ],
   imports: [
     appRouterModule,

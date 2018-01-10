@@ -34,7 +34,8 @@
     left: 0;
     z-index: 9999;
     width: 100%;
-    background-color: #F6F9F9;
+    /* background-color:#2B2B2B;  'Roboto', sans-serif;*/
+    background-color:#F6F9F9;
   }
   /* logo */
   header .logo {
@@ -92,16 +93,19 @@
   }
   header .mainmenu-container > ul > li.current > a {
     color: red;
+    /* color: #f8f1b0; */
   }
   header .mainmenu-container > ul > li > a {
     display: inline-block;
     color:tomato;
+    /* color: #f8f1b0; */
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-out;
   }
   header .mainmenu-container > ul > li > a:hover {
     color: #FF8625;
+    /* color: #f8f1b0; */
   }
   header .mainmenu-container > ul > li:hover > ul {
     top: 100%;
