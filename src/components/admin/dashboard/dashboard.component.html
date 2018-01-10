@@ -15,20 +15,13 @@
   </i>
 </p>
 <div class="col-sm-6">
-  <div class="alert alert-info" role="alert">
-    This is a info alert—check it out!
-    <span style="float:right"><a>Reply</a></span>
-  </div>
-  <div class="alert alert-info" role="alert">
-    This is a info alert—check it out!
-    <span style="float:right"><a>Reply</a></span>
-  </div>
-  <div class="alert alert-info" role="alert">
-    This is a info alert—check it out!
-    <span style="float:right"><a>Reply</a></span>
-  </div>
-  <div class="alert alert-info" role="alert">
-    This is a info alert—check it out!
-    <span style="float:right"><a>Reply</a></span>
+  <div *ngFor="let query of queries">
+    <div class="alert alert-info" role="alert">
+      {{query.description}}
+      <span style="float:right">
+        <a [routerLink]="['/admin/reply',query.from,query.subject]">Reply</a>
+      </span>
+    </div>
+    from {{query.from}} at {{query.submittedOn|formatdate}}
   </div>
 </div>

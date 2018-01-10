@@ -18,6 +18,7 @@ const routes: Routes = [
             { path: 'editevent/:eventId', component: AddeventComponent },
             { path: 'manageevent', component: ManageeventComponent },
             { path: 'mail', component: MailboxComponent },
+            { path: 'reply/:to/:subject', component: MailboxComponent },
             { path: 'dashboard', component: DashboardComponent }
         ]
     },
