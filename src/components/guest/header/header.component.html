@@ -3,32 +3,50 @@
     <div class="row">
       <!-- .logo -->
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 logo">
-        <a href="index.html"><img src="../../../assets/img/logo.png" alt="Logo Image"></a>
+        <a href="index.html">
+          <img src="../../../assets/img/logo.png" alt="Logo Image">
+        </a>
       </div>
       <!-- /.logo -->
       <!-- .mainmenu-container -->
       <nav class="col-lg-9 col-md-9 col-sm-6 col-xs-6 mainmenu-container">
-        <button class="nav-toggler">Navigation <i class="fa fa-bars"></i></button>		
+        <button class="nav-toggler">Navigation
+          <i class="fa fa-bars"></i>
+        </button>
         <ul class="mainmenu clearfix">
-          <li class="nav-closer"><i class="fa fa-close"></i></li>
+          <li class="nav-closer">
+            <i class="fa fa-close"></i>
+          </li>
           <li class="current scrollToLink dropdown">
-            <a href="index.html#banner">HOME</a>
-            
+            <a [routerLink]="['/user']">HOME</a>
+
+          <li class="scrollToLink">
+            <a [routerLink]="['/user/contact']">CONTACT</a>
           </li>
-          <li class="deadlink">
-            <a href="index.html#">Pages</a>
-            
+          <li class="scrollToLink">
+            <a data-toggle="modal" data-target="#login-modal">Sign in</a>
           </li>
-          <li class="scrollToLink"><a href="index.html#upcoming-event">EVENT</a></li>			
-          <li class="scrollToLink"><a href="index.html#event-speakers">SPEAKER</a></li>
-          <li class="scrollToLink"><a href="index.html#pricing-table">Pricing</a></li>
-          <li class="scrollToLink"><a href="index.html#gallery">GALLERY</a></li>
-         
-          <li class="scrollToLink"><a href="index.html#contact">CONTACT</a></li>
-          
         </ul>
       </nav>
       <!-- /.mainmenu-container -->
     </div>
   </div>
 </header>
+
+
+<div id="login-modal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h1>Login to Your Account</h1>
+      <br>
+      <form>
+        <input type="text" name="user" placeholder="Username" #email>
+        <input type="password" name="pass" placeholder="Password" #password>
+        <button mat-raised-button color="accent" [disabled]="email.value==null||password.value==null" id="loginbutton" (click)="login(email.value,password.value)">Sign In </button>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="modalclose" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

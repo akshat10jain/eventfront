@@ -29,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { GuestComponent } from '../components/guest/guest.component';
 import { HeaderComponent } from '../components/guest/header/header.component';
 import { GeteventComponent } from '../components/guest/getevent/getevent.component';
-import { EventsComponent,searchEventsPipe } from '../components/guest/events/events.component';
+import { EventsComponent, searchEventsPipe } from '../components/guest/events/events.component';
 import { ManageeventComponent } from '../components/admin/manageevent/manageevent.component';
 import { MailboxComponent } from '../components/admin/mailbox/mailbox.component';
 import { CKEditorModule } from 'ng2-ckeditor';
@@ -37,7 +37,11 @@ import { CKEditorComponent } from 'ng2-ckeditor/lib/src/ckeditor.component';
 import { DashboardComponent } from '../components/admin/dashboard/dashboard.component';
 import { Format } from '../components/admin/dashboard/dashboard.component';
 import { FooterComponent } from '../components/guest/footer/footer.component';
-
+import { LoginComponent } from '../components/admin/login/login.component';
+import { authService } from '../services/auth.service'
+import { HttpModule } from '@angular/http';
+import { UnauthorizeComponent } from '../components/admin/unauthorize/unauthorize.component';
+import { ContactComponent } from '../components/guest/contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -54,9 +58,12 @@ import { FooterComponent } from '../components/guest/footer/footer.component';
     ManageeventComponent,
     MailboxComponent,
     DashboardComponent,
+    ContactComponent,
     Format,
     searchEventsPipe,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    UnauthorizeComponent
   ],
   imports: [
     appRouterModule,
@@ -70,6 +77,7 @@ import { FooterComponent } from '../components/guest/footer/footer.component';
     SharedModule,
     SidebarModule,
     MatListModule,
+    HttpModule,
     HttpClientModule,
     Ng2PaginationModule,
     ButtonModule,
@@ -82,7 +90,8 @@ import { FooterComponent } from '../components/guest/footer/footer.component';
   providers: [
     userService,
     eventService,
-    mailService
+    mailService,
+    authService
   ],
   bootstrap: [MainComponent]
 })

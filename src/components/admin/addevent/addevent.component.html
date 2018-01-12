@@ -91,7 +91,8 @@
       <option>Healthcare</option>
       <option>Technology</option>
       <option>Internet of things</option>
-      <option>Hashion</option>
+      <option>Fashion</option>
+      <option>Festival</option>
       <option>Science</option>
     </select>
   </div>
@@ -109,7 +110,7 @@
     <textarea type="text" name="description" required minlength=150 class="form-control" [(ngModel)]="eventData.description"
       #description="ngModel"></textarea>
   </div>
-  <button type="button" mat-raised-button color="accent" (click)="createEvent(form)" [disabled]="!(uploader.getNotUploadedItems().length&&uploader.queue.length<=1 && form.valid)">Submit
+  <button type="button" mat-raised-button color="accent" (click)="createEvent(form)" [disabled]="!(form.valid)">Submit
     <span class="glyphicon glyphicon-upload"></span>
   </button>
 </form>

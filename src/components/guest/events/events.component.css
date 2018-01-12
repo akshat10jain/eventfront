@@ -1,3 +1,7 @@
+.img-holder{
+  height: 189 !important;
+  width: 270 !important;
+}
 .bottomRight{
   position: absolute;
   bottom: 0;

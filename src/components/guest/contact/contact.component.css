@@ -1,0 +1,75 @@
+
+input[type=text]{
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+  
+  }
+  /* dodgerBlue */
+  input[type=text]:focus{
+    border-color:dodgerBlue;
+    box-shadow: 0 0 8px dodgerBlue;
+  
+  }
+  .inputwithicon input[type=text]{
+    padding-left: 40px;
+  
+  }
+  .inputwithicon{
+    position: relative;
+  }
+  .inputwithicon i{
+    position: absolute;
+    left: 0;
+    top:12px;
+    padding: 9px 8px ;
+    color: #aaa;
+    transition: .3s;
+  }
+  
+  .inputwithicon input[type=text]:focus + i{
+    color: dodgerblue;
+  }
+  
+  textarea{
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+  
+  }
+  textarea:focus{
+    border-color:dodgerBlue;
+    box-shadow: 0 0 8px dodgerBlue;
+  
+  }
+  .inputwithico textarea:focus + i{
+    color: dodgerblue;
+  }
+  .inputwithico textarea{
+    padding-left: 40px;
+  
+  }
+  .inputwithico{
+    position: relative;
+  }
+  .inputwithico i{
+    position: absolute;
+    left: 0;
+    top:4px;
+    padding: 9px 8px ;
+    color: #aaa;
+    transition: .3s;
+  }
+  button{
+    margin-left:30%;
+  }

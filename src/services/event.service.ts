@@ -10,13 +10,19 @@ export class eventService {
     constructor(private http: HttpClient, private router: Router) {
         this.headers = new Headers().set('Content-Type', 'multipart/form-data');
     }
-    getEvents(){
-        return this.http.get(this.link+'event/get/list')
+    getEvents() {
+        return this.http.get(this.link + 'event/get/list')
     }
-    getEvent(id){
-        return this.http.get(this.link+`event/getevent/${id}`)
+    getEvent(id) {
+        return this.http.get(this.link + `event/getevent/${id}`)
     }
-    getQueries(){
-        return this.http.get(this.link+`contact/getqueries`)
+    getQueries() {
+        return this.http.get(this.link + `contact/getqueries`)
+    }
+    editEvent(id, data) {
+        return this.http.post(this.link + `event/update/${id}`, data)
+    }
+    eventByDate(){
+        return this.http.get(this.link + `event/listbydate`)
     }
 }

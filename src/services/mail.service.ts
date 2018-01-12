@@ -8,10 +8,10 @@ export class mailService {
     headers
     public link = 'http://localhost:3000/api/contact/reply'
     constructor(private http: HttpClient, private router: Router) {
-        this.headers = new Headers().set('Content-Type', 'multipart/form-data');
+        this.headers = new Headers().set('Content-Type', 'application/json');
     }
-    sendMail(data){
-        return this.http.post(this.link,data)
+    sendMail(data) {
+        return this.http.post(this.link, data)
     }
 
 }

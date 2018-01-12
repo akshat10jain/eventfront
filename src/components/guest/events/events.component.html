@@ -4,7 +4,6 @@
     <h1>See the upcoming event</h1>
     <p>this is the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
   </div>
-
 </div>
 
 
@@ -23,7 +22,7 @@
       </div>
       <div class="col-lg-5 col-md-5 col-sm-5">
         <form action="index.html#" class="pull-right">
-          <input type="text" placeholder="Search Event" name= "search" [(ngModel)]="_searchquery">
+          <input type="text" placeholder="Search Event" name="search" [(ngModel)]="_searchquery">
           <button type="submit">
             <i class="fa fa-search"></i>
           </button>
@@ -33,59 +32,200 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="tab-title-wrap">
-          <ul class="clearfix">
+          <ul class="clearfix nav nav-tabs">
             <li class="filter active" data-filter="all">
-              <span>All Event</span>
+              <a href="#1" data-toggle="tab">All Event</a>
             </li>
             <li class="filter" data-filter=".april-14">
-              <span>April 14</span>
+              <a href="#2" data-toggle="tab">{{dateFirst?._id | date}}</a>
             </li>
             <li class="filter" data-filter=".april-22">
-              <span>April 22</span>
+              <a href="#3" data-toggle="tab">{{dateSecond?._id | date}}</a>
             </li>
             <li class="filter" data-filter=".april-28">
-              <span>April 28</span>
+              <a href="#4" data-toggle="tab">{{dateThird?._id | date}}</a>
             </li>
             <li class="filter" data-filter=".may-10">
-              <span>May 10</span>
+              <a href="#5" data-toggle="tab">{{dateFourth?._id | date}}</a>
             </li>
             <li class="filter" data-filter=".may-15">
-              <span>May 15</span>
+              <a href="#6" data-toggle="tab">{{dateFifth?._id | date}}</a>
             </li>
-            <li class="filter" data-filter=".may-22">
-              <span>May 22</span>
-            </li>
-            <li class="filter" data-filter=".may-22">
-              <span>May 22</span>
-            </li>
-
           </ul>
         </div>
-        <div class="tab-content-wrap row">
-          <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (events|SearchEvents:_searchquery)">
-            <div class="img-holder">
-              <img src="http://localhost:3000{{event.eventImage}} " alt="">
-            </div>
-            <div class="content-wrap">
-              <!-- <img src=" ./assets/img/upcoming-event/1.jpg" alt="" class="author-img"> -->
-              <div class="meta">
-                <ul>
-                  <li>
-                    <span>
-                      <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
-                  </li>
-                  <li>
-                    <span>
-                      <i class="fa fa-map-marker"></i>{{event.location}}</span>
-                  </li>
-                </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="1">
+            <div class="tab-content-wrap">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (events|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName }}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
               </div>
-              <h3>{{event.eventName }}</h3>
-              <p>{{(event.description|slice:0:90)+'...' }}</p>
-              <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
-                <i class="fa fa-angle-right"></i>
-              </a>
-              <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+            </div>
+          </div>
+          <div class="tab-pane" id="2">
+            <div class="tab-content-wrap ">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (dateFirst?.data|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName}}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="3">
+            <div class="tab-content-wrap ">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (dateSecond?.data|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName}}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="4">
+            <div class="tab-content-wrap ">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (dateThird?.data|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName}}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="5">
+            <div class="tab-content-wrap ">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (dateFourth?.data|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName}}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="6">
+            <div class="tab-content-wrap ">
+              <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow " *ngFor="let event of (dateFifth?.data|SearchEvents:_searchquery)">
+                <div class="img-holder">
+                  <img src="http://localhost:3000{{event.eventImage}} " alt="" height="189px" width="270px">
+                </div>
+                <div class="content-wrap">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <span>
+                          <i class="fa fa-clock-o"></i>{{event.date | date}}</span>
+                      </li>
+                      <li>
+                        <span>
+                          <i class="fa fa-map-marker"></i>{{(event.location|slice:0:9)+'...'}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <h3>{{event.eventName}}</h3>
+                  <p>{{(event.description|slice:0:90)+'...' }}</p>
+                  <a class="read-more" [routerLink]="['/user/getevent',event._id]">read more
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <h2 class="bottomRight custom-font">By-{{event.publishedBy}}</h2>
+                </div>
+              </div>
             </div>
           </div>
         </div>
