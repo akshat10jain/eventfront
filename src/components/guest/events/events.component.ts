@@ -32,6 +32,7 @@ export class EventsComponent implements OnInit {
 
   ngOnInit() {
     this.eventService.getEvents().subscribe((resp) => {
+
       this.events = resp['data']
       console.log(this.events)
     })

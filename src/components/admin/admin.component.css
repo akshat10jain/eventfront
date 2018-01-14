@@ -8,3 +8,17 @@
     margin-left: -7px !important;
     margin-right: 0
 }
+.btn{
+    background-color: #555555;
+    margin-left: 90%;
+    color: white;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    /* float: right; */
+    cursor: pointer;
+
+}

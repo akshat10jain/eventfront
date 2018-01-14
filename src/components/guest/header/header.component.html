@@ -24,7 +24,7 @@
             <a [routerLink]="['/user/contact']">CONTACT</a>
           </li>
           <li class="scrollToLink">
-            <a data-toggle="modal" data-target="#login-modal">Sign in</a>
+            <a data-toggle="modal" data-target="#login-modal" (click)="isLoggedIn()">Sign in</a>
           </li>
         </ul>
       </nav>

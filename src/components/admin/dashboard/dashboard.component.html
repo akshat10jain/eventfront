@@ -14,14 +14,33 @@
     <strong>Queries</strong>
   </i>
 </p>
-<div class="col-sm-6">
-  <div *ngFor="let query of queries">
-    <div class="alert alert-info" role="alert">
-      {{query.description}}
-      <span style="float:right">
-        <a [routerLink]="['/admin/reply',query.from,query.subject]">Reply</a>
-      </span>
+<div class="panel-group" *ngFor=" let query of queries;let i = index">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title pull-left">
+        <a data-toggle="collapse" href="#{{i}}">
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          {{query.subject}}</a>
+      </h4>
+      <h5 class="panel-title pull-right">
+        <i>from {{query.from}} at {{query.submittedOn|formatdate}}</i>
+      </h5>
     </div>
-    from {{query.from}} at {{query.submittedOn|formatdate}}
+    <div [attr.id]="i" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>
+          {{query.name}}</p>
+        <p class="description">
+          <strong>Description: </strong>
+          <br>
+          <br>{{query.description}}</p>
+       <span style="float:right">
+          <a [routerLink]="['/admin/reply',query.from,query.subject]">
+            <button mat-raised-button>Reply</button>
+          </a>
+        </span>
+      </div>
+
+    </div>
   </div>
 </div>

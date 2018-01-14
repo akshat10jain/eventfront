@@ -17,6 +17,13 @@ export class GeteventComponent implements OnInit {
   ngOnInit() {
     this.eventService.getEvent(this.eventId).subscribe((resp) => {
       this.events = resp['data']
+      console.log(this.events)
+    })
+  }
+  addComment(id, comment) {
+    console.log(comment)
+    this.eventService.addComment(id, comment).subscribe((resp) => {
+      console.log(resp)
     })
   }
 

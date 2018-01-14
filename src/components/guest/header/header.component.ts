@@ -14,6 +14,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+  isLoggedIn() {
+    if (localStorage.getItem('token')) {
+      console.log("here")
+      this._router.navigate(['/admin'])
+    }
+  }
   login(email, password) {
     var btn = <HTMLInputElement>document.getElementById('loginbutton');
     var i = document.createElement('i');
@@ -30,6 +36,7 @@ export class HeaderComponent implements OnInit {
       btn.disabled = false;
       document.getElementById('modalclose').click()
       localStorage.setItem("token", resp['data'])
+      console.log(localStorage.getItem('token'))
       this._router.navigate(['/admin']);
     })
   }
