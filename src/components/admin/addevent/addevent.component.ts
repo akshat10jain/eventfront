@@ -12,7 +12,11 @@ export class AddeventComponent implements OnInit {
   public eventId = null;
   public eventData = {};
   public formData: FormData;
-  public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3000/api/event/add/event', itemAlias: 'eventImage' });
+  public uploader: FileUploader = new FileUploader({
+    url: 'http://localhost:3000/api/event/add/event',
+    itemAlias: 'eventImage',
+    headers: [{ name: 'authorization', value: localStorage.getItem('token') }]
+  });
   constructor(private _routeParams: ActivatedRoute, private eventService: eventService) {
     var queryParam = this._routeParams.params.subscribe((params: Params) => {
       this.eventId = params['eventId'];
@@ -31,6 +35,7 @@ export class AddeventComponent implements OnInit {
   }
   createEvent(data) {
     if (!this.eventId) {
+      console.log(data)
       bootbox.confirm("Are you sure you want to save!", (resp) => {
         if (resp) {
           this.uploader.onBuildItemForm = (item, form) => {
@@ -66,7 +71,7 @@ export class AddeventComponent implements OnInit {
       form.append("tags", data.value.tags)
       form.append("location", data.value.location)
       form.append("publishedBy", data.value.publishedBy)
-      this.eventService.editEvent(this.eventId,form ).subscribe((resp)=>{
+      this.eventService.editEvent(this.eventId, form).subscribe((resp) => {
         console.log(resp)
       })
     }
