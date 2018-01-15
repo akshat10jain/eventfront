@@ -45,31 +45,39 @@
 
     </div>
   </div>
+
   <div class="detailBox">
     <div class="titleBox">
-      <label>Comments</label>
-      <!-- <button type="button" class="close" aria-hidden="true">&times;</button> -->
+      <h2>Comment Box</h2>
+
     </div>
     <div class="commentBox">
       <p class="taskDescription custom-font">Add Your Enquiry Here</p>
+
     </div>
     <div class="actionBox">
       <ul class="commentList">
         <li *ngFor="let comment of events?.comments">
+
           <div class="commentText">
             <p class="">{{comment.comment}}</p>
-            <!-- <span class="date sub-text">on March 5th, 2014</span> -->
+            <span class="date sub-text">on {{comment.date|date}}</span>
+
           </div>
         </li>
+
       </ul>
-      <form #form="ngForm">
+
+      <form #form="ngForm" class="form-inline" role="form">
         <div class="form-group">
-          <input class="form-control" type="text" name="comemnt" required placeholder="Your comments" ngModel #comment="ngModel">
+          <input class="form-control" type="text" name="comment" required placeholder="Your comments" ngModel #comment="ngModel" />
         </div>
         <div class="form-group">
-          <button type="button" class="btn btn-primary" [disabled]="!form.valid" (click)="addComment(events._id,comment.value)">Add</button>
+
+          <button style="margin-top:10px;" type="button" class="btn btn-primary" [disabled]="!form.valid" (click)="addComment(events._id,comment.value)">Add</button>
         </div>
       </form>
     </div>
   </div>
+
 </section>

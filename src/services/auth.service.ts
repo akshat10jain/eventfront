@@ -36,4 +36,4 @@ export class authService implements CanActivate {
         localStorage.removeItem('token');
         this.router.navigate(['/user'])
     }
-}
+} 

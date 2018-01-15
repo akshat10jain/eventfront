@@ -1,6 +1,8 @@
 footer {
   background: #29363E;
   padding: 0px;
+  position: relative;
+  margin-bottom: 0px;
 }    
 
 .social-icons a:hover {

@@ -21,8 +21,7 @@ export class GeteventComponent implements OnInit {
     })
   }
   addComment(id, comment) {
-    console.log(comment)
-    this.eventService.addComment(id, comment).subscribe((resp) => {
+    this.eventService.addComment(id, { comment: comment }).subscribe((resp) => {
       console.log(resp)
     })
   }
