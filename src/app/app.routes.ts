@@ -36,6 +36,7 @@ const routes: Routes = [
             { path: 'contact', component: ContactComponent }
         ]
     },
-    { path: 'unauthorize', component: UnauthorizeComponent }
+    { path: 'unauthorize', component: UnauthorizeComponent },
+    { path: '**', component: UnauthorizeComponent }
 ]
 export const appRouterModule = RouterModule.forRoot(routes);

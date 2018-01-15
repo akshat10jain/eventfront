@@ -3,7 +3,8 @@ import { userService } from '../../../services/user.service';
 import { FileUploader } from 'ng2-file-upload'
 declare var bootbox: any
 import { ActivatedRoute, Params } from '@angular/router';
-import { eventService } from '../../../services/event.service'
+import { eventService } from '../../../services/event.service';
+import * as $ from 'jquery'
 @Component({
   templateUrl: './addevent.component.html',
   styleUrls: ['./addevent.component.css']

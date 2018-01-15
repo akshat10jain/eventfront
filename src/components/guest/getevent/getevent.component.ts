@@ -22,7 +22,7 @@ export class GeteventComponent implements OnInit {
   }
   addComment(id, comment) {
     this.eventService.addComment(id, { comment: comment }).subscribe((resp) => {
-      console.log(resp)
+      this.events.comments.push(resp['data'])
     })
   }
 

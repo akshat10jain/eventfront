@@ -6,14 +6,14 @@ import { eventService} from '../../../services/event.service'
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  data = {name:'',email:'',subject:'',description:''}
+  data = {name:'',from:'',subject:'',description:''}
   constructor(public eventService: eventService) { }
 
   ngOnInit() {
   }
   submitquery(name, email, subject, description) {
     this.data.name = name.value
-    this.data.email = email.value
+    this.data.from = email.value
     this.data.subject = subject.value
     this.data.description = description.value
     this.eventService.sendQuery(JSON.stringify(this.data)).subscribe((resp) => {

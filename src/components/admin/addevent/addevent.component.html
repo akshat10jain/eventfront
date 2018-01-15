@@ -12,13 +12,13 @@
     <label class="control-label">
       <h3>Address</h3>
     </label>
-    <input type="text" name="location" required class="form-control" [(ngModel)]="eventData.location" #location="ngModel">
+    <input type="text" name="location" id="dateforevent" required class="form-control" [(ngModel)]="eventData.location" #location="ngModel">
   </div>
   <div class="form-group" [class.has-error]="time.invalid && time.touched">
     <label class="control-label">
       <h3>Time</h3>
     </label>
-    <input type="time" name="time" required class="form-control" [(ngModel)]="eventData.time" #time="ngModel">
+    <input type="time"id="eventTime" name="time" required class="form-control" [(ngModel)]="eventData.time" #time="ngModel">
   </div>
   <div class="form-group" [class.has-error]="date.invalid && date.touched">
     <label class="control-label">
