@@ -1,6 +1,10 @@
 .container{
   margin-top: 100px;
   margin-left: 300px;
+  
+}
+.container-line{
+  width: 73.5%;
 }
 
 input[type=text]{
